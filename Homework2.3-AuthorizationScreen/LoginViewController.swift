@@ -39,6 +39,7 @@ class LoginViewController: UIViewController {
         
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else {
             return
@@ -58,6 +59,19 @@ class LoginViewController: UIViewController {
         super .touchesBegan(touches, with: event)
     }
     
+    
+    private func checkAuthData() -> Bool {
+        
+        if registratedUserName == loginTextField.text && registratedPassword == passwordTextField.text {
+            return true
+        } else if registratedUserName == loginTextField.text && registratedPassword != passwordTextField.text {
+            print("Incorrect password")
+            return false
+        } else {
+            print("Unnnown user")
+            return false
+        }
+    }
     
 }
 
