@@ -20,21 +20,17 @@ class WelcomeViewController: UIViewController {
     
     @IBOutlet weak var logoutButton: UIButton!
     
-    
+    // MARK: - View Load
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.addVerticalGradientLayer(topColor: .yellow, bottomColor: .blue)
         welcomeLabel.text = "Welcome, dear \(welcomeUserName)!"
-        
     }
     
     // MARK: - IBActions
-    
     @IBAction func tappedLogoutButton(_ sender: UIButton!) {
         dismiss(animated: true)
         welcomeUserName = ""
     }
-    
-
     
 }
